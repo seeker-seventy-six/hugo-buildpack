@@ -55,6 +55,8 @@ echo "\n-----> Building the site"
 cd $BUILD_DIR
 mkdir -p static | indent
 ./hugo | indent
+echo "successfully built hugo static pages in public/"
+ls $BUILD_DIR/public
 
 # # Move the Hugo output to Nginx's expected directory
 # echo "\n-----> Moving Hugo output to Nginx directory"
