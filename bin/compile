@@ -50,7 +50,7 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
   git clone $THEME_URL
 else [ -d $BUILD_DIR/themes ]
   echo "\n-----> Using the theme already present in the themes/ directory"
-  ls themes/
+  ls $BUILD_DIR/themes
 fi
 
 # Build the site
