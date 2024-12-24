@@ -53,11 +53,16 @@ else [ -d $BUILD_DIR/themes ]
   ls $BUILD_DIR/themes
 fi
 
+# Ensure the public directory exists
+echo "\n-----> Ensuring the public directory exists with correct permissions"
+mkdir -p $BUILD_DIR/public
+chmod 755 $BUILD_DIR/public
+
 # Build the site
 echo "\n-----> Building the site"
 cd $BUILD_DIR
 mkdir -p static | indent
-./hugo | indent
+./hugo --debug | indent
 echo "successfully built hugo static pages in public/"
 ls -la $BUILD_DIR/public
 
