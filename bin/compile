@@ -48,8 +48,9 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
   THEME_URL="`cat $BUILD_DIR/.hugotheme`"
   rm -rf $BUILD_DIR/themes && mkdir $BUILD_DIR/themes && cd $BUILD_DIR/themes
   git clone $THEME_URL
-else [ -d $BUILD_DIR/themes ]; then
+else [ -d $BUILD_DIR/themes ]
   echo "\n-----> Using the theme already present in the themes/ directory"
+  ls themes/
 fi
 
 # Build the site
