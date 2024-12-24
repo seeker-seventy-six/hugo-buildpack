@@ -48,6 +48,8 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
   THEME_URL="`cat $BUILD_DIR/.hugotheme`"
   rm -rf $BUILD_DIR/themes && mkdir $BUILD_DIR/themes && cd $BUILD_DIR/themes
   git clone $THEME_URL
+else [ -d $BUILD_DIR/themes ]; then
+  echo "\n-----> Using the theme already present in the themes/ directory"
 fi
 
 # Build the site
@@ -56,7 +58,7 @@ cd $BUILD_DIR
 mkdir -p static | indent
 ./hugo | indent
 echo "successfully built hugo static pages in public/"
-ls $BUILD_DIR/public
+ls -la $BUILD_DIR/public
 
 # # Move the Hugo output to Nginx's expected directory
 # echo "\n-----> Moving Hugo output to Nginx directory"
