@@ -62,8 +62,8 @@ chmod 755 $BUILD_DIR/public
 echo "\n-----> Building the site"
 cd $BUILD_DIR
 mkdir -p static | indent
-./hugo --debug | indent
-echo "successfully built hugo static pages in public/"
+./hugo | indent
+echo "\n-----> Built hugo static pages in public/"
 ls -la $BUILD_DIR/public
 
 # # Move the Hugo output to Nginx's expected directory
